@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 // get a single workout
-router.get('/:id', (res, req) => {
+router.get('/:id', (req, res) => {
     res.json({ mssg: 'get a single workouts' })
 })
 
