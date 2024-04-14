@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-      <main className="overflow-hidden">
+      <main className="overflow-hidden w-full">
         <BrowserRouter>
           <Navbar />
           <div className="pages bg-card-foreground w-full min-h-screen">
