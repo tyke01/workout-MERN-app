@@ -4,14 +4,16 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="pages">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+      <main className="overflow-hidden">
+        <BrowserRouter>
+          <Navbar />
+          <div className="pages bg-card-foreground w-full min-h-screen">
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </main>
   );
 }
 
