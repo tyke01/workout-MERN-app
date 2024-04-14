@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import WorkoutDetails from "@/components/WorkoutDetails";
 import WorkoutForm from "@/components/WorkoutForm";
 
+import { UseWorkoutsContext } from "@/hooks/UseWorkoutsContext";
+
 const Home = () => {
-  const [workouts, setWorkouts] = useState(null);
+  const { workouts, dispatch } = UseWorkoutsContext();
 
   useEffect(() => {
     const fetchWorkouts = async () => {
@@ -12,13 +14,12 @@ const Home = () => {
       const json = await response.json();
 
       if (response.ok) {
-        setWorkouts(json);
+        dispatch({ type: "SET_WORKOUTS", payload: json });
       }
     };
 
     fetchWorkouts();
-  }, []);
-
+  }, [dispatch]);
   return (
     <div className="bg-card-foreground h-full w-full text-accent px-8 pt-16 flex flex-col md:flex-row gap-20 items-baseline">
       <div className="w-full md:w-3/4">

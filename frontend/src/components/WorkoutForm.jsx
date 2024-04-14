@@ -2,10 +2,14 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 
+import { UseWorkoutsContext } from "@/hooks/UseWorkoutsContext";
+
 const WorkoutForm = () => {
   const [title, setTitle] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
+
+  const {dispatch} = UseWorkoutsContext()
 
   const [error, setError] = useState(null);
 
@@ -34,6 +38,7 @@ const WorkoutForm = () => {
       setLoad("");
       setReps("");
       console.log("New workout added", json);
+      dispatch({ type: "CREATE_WORKOUT", payload: json });
     }
   };
 

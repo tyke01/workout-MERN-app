@@ -5,13 +5,13 @@ import './index.css'
 
 import { Toaster } from "@/components/ui/toaster"
 
-import { WorkoutContextProvider} from '@/context/WorkoutContext.jsx'
+import { WorkoutsContextProvider} from '@/context/WorkoutContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <WorkoutContextProvider> 
+    <WorkoutsContextProvider> 
     <App />
     <Toaster />
-    </WorkoutContextProvider>
+    </WorkoutsContextProvider>
   </React.StrictMode>
 )
